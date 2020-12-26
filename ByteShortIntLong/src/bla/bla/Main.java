@@ -35,6 +35,16 @@ public class Main {
         // Integer -> 32 bits -> 8x4 -> 00000001 00000001 00000001 00000001
         // Long -> 64 bits -> 8x8 -> 00000001 00000001 00000001 00000001 00000001 00000001 00000001 00000001
 
+        int myTotal = (myMinIntValue / 2);
 
+        // Java by default use integer if no cast // most of the time use integer
+        byte myNewByteValue = (byte)(myMinByteValue / 2); // casting
+        short myNewShortValue = (short)(myMinShortValue / 2); // casting
+
+        byte myOtherByteNumber = 125;
+        short myOtherShortNumber = 31_000;
+        int myOtherIntNumber = 1_000_000;
+        long myOtherLongNumber= 50000L + 10L * (myOtherByteNumber + myOtherShortNumber + myOtherIntNumber);
+        System.out.println(myOtherLongNumber);
     }
 }
