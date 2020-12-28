@@ -20,43 +20,62 @@ public class Main {
 
     }
 
-    public static void getDurationString (int minutes, int seconds) {
-        if(minutes < 0 || seconds < 0 || seconds > 59) {
-            System.out.println("Invalid value");
-        } else {
-            int hours = minutes / 60;
-                if (hours < 1) {
-                    System.out.println(minutes + "m " + seconds + "s");
-                } else {
-                    int minutesLeft = minutes - (hours * 60);
-                    System.out.println(hours + "h " + minutesLeft + "m " + seconds + "s");
-                }
-
+    private static String getDurationString (int minutes, int seconds) {
+//        if(minutes < 0 || seconds < 0 || seconds > 59) {
+//            System.out.println("Invalid value");
+//        } else {
+//            int hours = minutes / 60;
+//                if (hours < 1) {
+//                    System.out.println(minutes + "m " + seconds + "s");
+//                } else {
+//                    int minutesLeft = minutes - (hours * 60);
+//                    System.out.println(hours + "h " + minutesLeft + "m " + seconds + "s");
+//                }
+//
+//        }
+        if (minutes < 0 || seconds < 0 || seconds > 59) {
+            return "Invalid value";
         }
+
+        int hours = minutes / 60;
+        int remainingMinutes = minutes % 60;
+
+        return hours + "h " + remainingMinutes + "m " + seconds + "s ";
+
     }
 
-    public static void getDurationString (int seconds) {
-        if(seconds < 0) {
-            System.out.println("Invalid value");
-        } else {
-            if (seconds < 60  ) {
-                System.out.println(seconds + "s");
-            } else if (seconds < 3600) {
-                int minutes = seconds / 60;
-                int secondsLeft = seconds - (minutes * 60);
-                System.out.println(minutes + "m " + secondsLeft + "s");
-            } else {
-                int hours = seconds / 3600;
-                int secondsLeft = seconds - (hours * 3600);
-                int minutes = secondsLeft / 60;
-                secondsLeft = secondsLeft - (minutes * 60);
-                System.out.println(hours + "h " + minutes + "m " + secondsLeft + "s");
-            }
+    private static String getDurationString (int seconds) {
+//        if(seconds < 0) {
+//            System.out.println("Invalid value");
+//        } else {
+//            if (seconds < 60  ) {
+//                System.out.println(seconds + "s");
+//            } else if (seconds < 3600) {
+//                int minutes = seconds / 60;
+//                int secondsLeft = seconds - (minutes * 60);
+//                System.out.println(minutes + "m " + secondsLeft + "s");
+//            } else {
+//                int hours = seconds / 3600;
+//                int secondsLeft = seconds - (hours * 3600);
+//                int minutes = secondsLeft / 60;
+//                secondsLeft = secondsLeft - (minutes * 60);
+//                System.out.println(hours + "h " + minutes + "m " + secondsLeft + "s");
+//            }
+//        }
+        if (seconds < 0) {
+            return "Invalid value";
         }
+
+        int minutes = seconds / 60;
+        int remainingSeconds = seconds % 60;
+
+        return getDurationString (minutes, remainingSeconds);
+
+
     }
 
-    public static void getDurationString () {
-        System.out.println("No parameters specified");
+    private static String getDurationString () {
+        return "No parameters specified";
     }
 
 }
