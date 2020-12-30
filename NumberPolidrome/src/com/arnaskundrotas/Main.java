@@ -12,10 +12,9 @@ public class Main {
     }
 
     public static int reverseNumber (int number) {
-        int last;
         int reverse = 0;
         while (number != 0){
-            last = number % 10;
+            int last = number % 10;
             number = number / 10;
             reverse = reverse * 10 + last;
         }
