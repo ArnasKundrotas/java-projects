@@ -4,7 +4,16 @@ public class SimpleCalculator {
     private double firstNumber;
     private double secondNumber;
 
-    //getters
+    //SET
+    public void setFirstNumber(double firstNumber) {
+        this.firstNumber = firstNumber;
+    }
+
+    public void setSecondNumber(double secondNumber) {
+        this.secondNumber = secondNumber;
+    }
+
+    //GET
     public double getFirstNumber() {
         return firstNumber;
     }
@@ -18,31 +27,20 @@ public class SimpleCalculator {
     }
 
     public double getSubtractionResult() {
-        double result;
-        return result = getFirstNumber() - getSecondNumber();
+        return getFirstNumber() - getSecondNumber();
     }
 
     public double getMultiplicationResult() {
-        double result;
-        return result = getFirstNumber() * getSecondNumber();
+        return getFirstNumber() * getSecondNumber();
     }
 
     public double getDivisionResult() {
-        double result;
         if (secondNumber == 0 || firstNumber == 0) {
             return 0;
         }
-        return result = getFirstNumber() / getSecondNumber();
+        return getFirstNumber() / getSecondNumber();
     }
 
-    //setters
-    public void setFirstNumber(double firstNumber) {
-        this.firstNumber = firstNumber;
-    }
-
-    public void setSecondNumber(double secondNumber) {
-        this.secondNumber = secondNumber;
-    }
 }
 
 
